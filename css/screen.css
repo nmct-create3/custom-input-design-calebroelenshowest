@@ -677,9 +677,6 @@ input::placeholder {
     border-color: var(--global-input-hover-borderColor);
 }
 
-.c-custom-option__fake-input:focus {
-    border-color: var(--global-input-focus-borderColor);
-}
 
 .c-custom-option__fake-input--checkbox{
     border-radius: var(--global-borderRadius);
