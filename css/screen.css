@@ -65,6 +65,7 @@
     --global-input-hover-borderColor: var(--global-color-neutral-xx-light);
     --global-input-focus-borderColor: var(--global-color-alpha);
     --global-input-boxShadow: 0 0 0 3px var(--global-color-alpha-x-transparent);
+    --global-input-transition: ease-in-out 0.2s;
 
 
 }
@@ -643,6 +644,8 @@ input::placeholder {
 .c-option--hidden:checked + .c-custom-option .c-custom-option__symbol {
     fill: blue;
     opacity: 1;
+    transition: var(--global-input-transition);
+    transform: scale(1);
 }
 
 .c-custom-option {
@@ -652,6 +655,8 @@ input::placeholder {
 
 .c-custom-option__symbol {
     opacity: 0;
+    transition: var(--global-input-transition);
+    transform: scale(0);
 }
 
 
@@ -666,6 +671,14 @@ input::placeholder {
     justify-content: center;
     align-items: center;
 
+}
+
+.c-custom-option__fake-input:hover{
+    border-color: var(--global-input-hover-borderColor);
+}
+
+.c-custom-option__fake-input:focus {
+    border-color: var(--global-input-focus-borderColor);
 }
 
 .c-custom-option__fake-input--checkbox{
@@ -726,7 +739,7 @@ input::placeholder {
     line-height: calc(var(--global-baseline) * 3);
     width: 100%;
     outline: none;
-    transition: all var(--global-transition-timing-alpha);
+    transition: all var(--global-transitionTiming-alpha);
 }
 
 .c-button:hover {
