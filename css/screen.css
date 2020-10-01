@@ -67,7 +67,38 @@
     --global-input-boxShadow: 0 0 0 3px var(--global-color-alpha-x-transparent);
     --global-input-transition: ease-in-out 0.2s;
 
+    /* Light mode */
 
+    --global-page-backgroundColor: var(--global-color-neutral-xxxx-light);
+    --global-page-color: var(--global-color-neutral-xxxx-dark);
+    --global-logo-path-color--1: var(--global-color-neutral-xxxx-dark);
+    --global-logo-path-color--2: var(--global-color-alpha);
+    --global-logo-path-color--3: var(--global-color-alpha-x-dark);
+    --global-color-card-background: White;
+    --global-color-label: var(--global-color-neutral-xx-dark);
+    --global-color-text: var(--global-color-neutral-xxxx-dark);
+    --global-boxshadow-button: 0 0 0 3px var(--global-color-alpha-x-transparent);
+    --global-border-card-footer: var(--global-borderWidth) solid var(--global-color-neutral-xxx-light);
+
+}
+
+@media (prefers-color-scheme: dark){
+    :root{
+        --global-page-color: var(--global-color-neutral-xxxx-dark);
+        --global-page-backgroundColor: var(--global-color-neutral-xxxx-dark);
+        --global-logo-path-color--1: White;
+        --global-logo-path-color--2: White;
+        --global-logo-path-color--3: White;
+        --global-input-backgroundColor: var(--global-page-color);
+        --global-input-color: White;
+        --global-color-card-background: var(--global-color-neutral-xxx-dark);
+        --global-color-label: var(--global-color-neutral);
+        --global-color-text: White;
+        --global-input-borderColor: var(--global-input-backgroundColor);
+        --global-input-focus-borderColor: var(--global-color-alpha);
+        --global-input-boxShadow: 0 0 0 3px var(--global-color-alpha);
+        --global-border-card-footer: var(--global-borderWidth) solid var(--global-page-color);
+    }
 }
 
 /*------------------------------------*\
@@ -84,8 +115,8 @@ html {
     font-size: 16px;
     line-height: 1.5;
     font-family: "Inter Web", Helvetica, arial, sans-serif;
-    color: var(--global-color-neutral-xxxx-dark);
-    background-color: var(--global-color-neutral-xxxx-light);
+    color: var(--global-color-text);
+    background-color: var(--global-page-backgroundColor);
     box-sizing: border-box;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;    
@@ -526,15 +557,15 @@ input::placeholder {
 }
 
 .c-logo__path--1 {
-    fill: var(--global-color-neutral-xxxx-dark);
+    fill: var(--global-logo-path-color--1);
 }
 
 .c-logo__path--2 {
-    fill: var(--global-color-alpha);
+    fill: var(--global-logo-path-color--2);
 }
 
 .c-logo__path--3 {
-    fill: var(--color-alpha-x-dark);
+    fill: var(--global-logo-path-color--3);
 }
 
 /*
@@ -544,7 +575,7 @@ input::placeholder {
 */
 
 .c-card {
-    background-color: White;
+    background-color: var(--global-color-card-background);
     margin-bottom: var(--global-whitespace);
     border-radius: var(--global-borderRadius);
     box-shadow: 0 0 0 var(--global-borderWidth) rgba(0,0,0, 0.05), 0 2px 4px rgba(0,0,0,.075);
@@ -559,7 +590,7 @@ input::placeholder {
 
 .c-card__footer {
     text-align: center;
-    border-top: var(--global-borderWidth) solid var(--global-color-neutral-xxx-light);
+    border-top: var(--global-border-card-footer);
 }
 
 .c-card__title {
@@ -741,7 +772,7 @@ input::placeholder {
     font-size: 14px;
     padding-bottom: var(--global-whitespace-xs);    
     line-height: calc(var(--global-baseline) * 2);
-    color: var(--global-color-neutral-xx-dark);
+    color: var(--global-color-label);
 }
 
 .c-label--option {
@@ -773,7 +804,7 @@ input::placeholder {
 }
 
 .c-button:focus {
-    box-shadow: 0 0 0 3px var(--global-color-alpha-x-transparent);
+    box-shadow: var(--global-boxshadow-button);
 }
 
 .c-button:active {
@@ -1124,6 +1155,7 @@ No media query since this is the default in mobile first design
     Inlined to avoid the additional HTTP request:
     http://www.phpied.com/delay-loading-your-print-css/
 */
+
 
 @media print {
     *,
