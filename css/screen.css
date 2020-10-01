@@ -79,7 +79,8 @@
     --global-color-text: var(--global-color-neutral-xxxx-dark);
     --global-boxshadow-button: 0 0 0 3px var(--global-color-alpha-x-transparent);
     --global-border-card-footer: var(--global-borderWidth) solid var(--global-color-neutral-xxx-light);
-
+    --global-checkbox-background: White;
+    --global-checkbox-checkcolor: blue;
 }
 
 @media (prefers-color-scheme: dark){
@@ -97,6 +98,8 @@
         --global-input-borderColor: var(--global-input-backgroundColor);
         --global-input-focus-borderColor: var(--global-color-alpha);
         --global-input-boxShadow: 0 0 0 3px var(--global-color-alpha);
+        --global-checkbox-background: var(--global-input-backgroundColor);
+        --global-checkbox-checkcolor: white;
         --global-border-card-footer: var(--global-borderWidth) solid var(--global-page-color);
     }
 }
@@ -283,6 +286,7 @@ input::placeholder {
     ---
     Creates a horizontal row that stretches the viewport and adds padding around children
 */
+
 
 .o-row {
     position: relative;
@@ -681,7 +685,7 @@ input::placeholder {
 }
 
 .c-option--hidden:checked + .c-custom-option .c-custom-option__symbol {
-    fill: blue;
+    fill: var(--global-checkbox-checkcolor);
     opacity: 1;
     transition: var(--global-input-transition);
     transform: scale(1);
@@ -718,6 +722,7 @@ input::placeholder {
     inset: var(--global-input-boxShadow);
     justify-content: center;
     align-items: center;
+    background: var(--global-checkbox-background);
 
 }
 
@@ -828,6 +833,10 @@ input::placeholder {
 
 .u-color-neutral-dark {
     color: var(--global-color-neutral-dark);
+}
+
+.u-no-deco {
+    text-decoration: none;
 }
 
 /*
