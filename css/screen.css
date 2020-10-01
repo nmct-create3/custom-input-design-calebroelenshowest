@@ -641,12 +641,29 @@ input::placeholder {
     margin-right: var(--global-whitespace-sm);
 }
 
+.c-option-list {
+    margin-bottom: 24px;
+}
+
+.c-option-list__item {
+    margin-bottom: 12px;
+}
+
 .c-option--hidden:checked + .c-custom-option .c-custom-option__symbol {
     fill: blue;
     opacity: 1;
     transition: var(--global-input-transition);
     transform: scale(1);
 }
+
+.c-option--hidden:focus + .c-custom-option .c-custom-option__fake-input {
+    box-shadow: 0 0 0 3px var(--global-color-alpha-x-transparent);
+}
+
+.c-option--hidden:checked:focus + .c-custom-option .c-custom-option__fake-input {
+    box-shadow: 0 0 0 3px var(--global-color-alpha);
+}
+
 
 .c-custom-option {
     display: flex;
@@ -673,9 +690,11 @@ input::placeholder {
 
 }
 
-.c-custom-option__fake-input:hover{
+.c-custom-option__fake-input:hover, .c-custom-option__fake-input:active{
     border-color: var(--global-input-hover-borderColor);
 }
+
+
 
 
 .c-custom-option__fake-input--checkbox{
@@ -700,6 +719,16 @@ input::placeholder {
     border-radius: 100%
 }
 
+/* Custom toggle checkbox */
+
+.c-custom-toggle__fake-input {
+    height: 24px;
+    width: 48px;
+    border: 1px solid var(--global-input-borderColor);
+    border-radius: 50%;
+    display: flex;
+    margin-right: 8px;
+}
 
 /*
     Component: Label
